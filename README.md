@@ -9,15 +9,19 @@
 
 ## 配置 Maven 插件
 
+> 上面官方文档也有用法。
+>
+> 插件详细文档: https://help.sonatype.com/repomanager2/staging-releases/configuring-your-project-for-deployment
+
 使用 oss 官方推荐的发布插件：
 
 ```xml
 
 <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-deploy-plugin</artifactId>
-  <configuration>
-    <skip>true</skip>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-deploy-plugin</artifactId>
+   <configuration>
+      <skip>true</skip>
   </configuration>
 </plugin>
 <plugin>
