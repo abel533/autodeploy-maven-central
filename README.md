@@ -16,7 +16,6 @@
 使用 oss 官方推荐的发布插件：
 
 ```xml
-
 <plugin>
    <groupId>org.apache.maven.plugins</groupId>
    <artifactId>maven-deploy-plugin</artifactId>
@@ -25,22 +24,22 @@
    </configuration>
 </plugin>
 <plugin>
-<groupId>org.sonatype.plugins</groupId>
-<artifactId>nexus-staging-maven-plugin</artifactId>
-<executions>
-   <execution>
-      <id>default-deploy</id>
-      <phase>deploy</phase>
-      <goals>
-         <goal>deploy</goal>
-         <goal>release</goal>
-      </goals>
-   </execution>
-</executions>
-<configuration>
-   <serverId>ossrh</serverId>
-   <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-</configuration>
+  <groupId>org.sonatype.plugins</groupId>
+  <artifactId>nexus-staging-maven-plugin</artifactId>
+  <executions>
+     <execution>
+        <id>default-deploy</id>
+        <phase>deploy</phase>
+        <goals>
+           <goal>deploy</goal>
+           <goal>release</goal>
+        </goals>
+     </execution>
+  </executions>
+  <configuration>
+     <serverId>ossrh</serverId>
+     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+  </configuration>
 </plugin>
 ```
 
