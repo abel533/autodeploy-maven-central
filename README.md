@@ -32,7 +32,7 @@
 
 ## 配置 GitHub Actions
 
-添加 `.github/workflows/maven-deploy.yml` 文件，内容如下：
+添加 `.github/workflows/release.yml` 文件，内容如下：
 
 ```yaml
 name: Publish package to the Maven Central Repository
