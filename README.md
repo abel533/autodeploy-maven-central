@@ -17,37 +17,18 @@
 
 ```xml
 <plugin>
-   <groupId>org.apache.maven.plugins</groupId>
-   <artifactId>maven-deploy-plugin</artifactId>
+   <groupId>org.sonatype.plugins</groupId>
+   <artifactId>nexus-staging-maven-plugin</artifactId>
+   <extensions>true</extensions>
    <configuration>
-      <skip>true</skip>
+      <serverId>ossrh</serverId>
+      <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+      <autoReleaseAfterClose>true</autoReleaseAfterClose>
    </configuration>
-</plugin>
-<plugin>
-  <groupId>org.sonatype.plugins</groupId>
-  <artifactId>nexus-staging-maven-plugin</artifactId>
-  <executions>
-     <execution>
-        <id>default-deploy</id>
-        <phase>deploy</phase>
-        <goals>
-           <goal>deploy</goal>
-           <goal>release</goal>
-        </goals>
-     </execution>
-  </executions>
-  <configuration>
-     <serverId>ossrh</serverId>
-     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-  </configuration>
 </plugin>
 ```
 
-跳过了默认的 `maven-deploy-plugin` 插件，使用 oss 提供的 `nexus-staging-maven-plugin` 插件。
-
-如果想要手工在 oss 执行 release 操作，就把 `<goal>release</goal>` 去掉，当前的配置会自动执行 `close` 和 `release` 两个操作。
-
-注意配置中的 `<serverId>ossrh</serverId>`，这里的名称是为了能在 GitHub 使用，本地 settings.xml 中如果不是这个名字，可以复制 `server` 加一个这个名字的配置。
+这里配置的 `autoReleaseAfterClose` 会自动在 close 后执行 release 发布操作，如果想手工执行，可以去掉这里的配置。
 
 ## 配置 GitHub Actions
 
