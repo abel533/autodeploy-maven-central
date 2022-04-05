@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.github.abel533</groupId>
   <artifactId>autodeploy-maven-central</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.6</version>
   <name>autodeploy-maven-central</name>
   <description>autodeploy-maven-central</description>
   <url>https://github.com/abel533/autodeploy-maven-central</url>
